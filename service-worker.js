@@ -1,15 +1,15 @@
 const CACHE_NAME = 'my-site-cache-v1';
 const assets = [
-  "/",
-  "/index.html",
-  "/style.css",
-  "/script.js",
-  "/manifest.json",
-  "/image/icon-192x192.png",
-  "/image/image.jpeg",
-  "/image/certificate 1.png",
-  "/image/certificate 2.png",
-  "/image/certificate 3.png"
+  "/Sri-Portofolio/",
+  "/Sri-Portofolio/index.html",
+  "/Sri-Portofolio/style.css",
+  "/Sri-Portofolio/script.js",
+  "/Sri-Portofolio/manifest.json",
+  "/Sri-Portofolio/icon-192x192.png",
+  "/Sri-Portofolio/image.jpeg",
+  "/Sri-Portofolio/certificate 1.png",
+  "/Sri-Portofolio/certificate 2.png",
+  "/Sri-Portofolio/certificate 3.png"
 ];
 
 // Install Service Worker dan caching file-file yang penting
@@ -60,7 +60,7 @@ self.addEventListener('message', event => {
     const title = 'Hallo!';
     const options = {
       body: 'Selamat Datang di Web Portfolio Tuti. Terima kasih telah mengunjungi!',
-      icon: '/image/icon-192x192.png'
+      icon: '/Sri-Portofolio/icon-192x192.png'
     };
 
     if (Notification.permission === 'granted') {
@@ -75,6 +75,6 @@ self.addEventListener('message', event => {
 self.addEventListener('notificationclick', event => {
   event.notification.close(); // Menutup notifikasi saat diklik
   event.waitUntil(
-    clients.openWindow('https://github.com/srihastut') // URL yang akan dibuka saat notifikasi diklik
+    clients.openWindow('https://srihastut.github.io/Sri-Portofolio/') // URL yang akan dibuka saat notifikasi diklik
   );
 });
