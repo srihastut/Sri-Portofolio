@@ -15,15 +15,17 @@ const assets = [
 // Install Service Worker dan caching file-file yang penting
 self.addEventListener('install', function(event) {
   event.waitUntil(
-    caches.open(CACHE_NAME) // Gunakan CACHE_NAME yang benar
+    caches.open(CACHE_NAME)
       .then(function(cache) {
         console.log('Opened cache');
-        return cache.addAll(assets); // Ganti urlsToCache dengan assets
+        return cache.addAll(assets).catch(function(error) {
+          console.error('Failed to cache some assets: ', error);
+        });
       })
   );
 });
 
-// Activate Service Worker
+// Aktivasi Service Worker - Menghapus cache lama
 self.addEventListener('activate', function(event) {
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
@@ -39,17 +41,20 @@ self.addEventListener('activate', function(event) {
   );
 });
 
-// Fetch dan cek apakah file ada di cache
+// Menangani permintaan fetch dan mengembalikan cache jika ada
 self.addEventListener('fetch', function(event) {
   event.respondWith(
     caches.match(event.request)
       .then(function(response) {
-        // Jika ada di cache, return file dari cache
+        // Jika resource ada di cache, kembalikan dari cache
         if (response) {
           return response;
         }
-        // Jika tidak ada di cache, fetch dari network
-        return fetch(event.request);
+        // Jika tidak ada di cache, lakukan fetch ke network
+        return fetch(event.request).catch(function(error) {
+          console.error('Failed to fetch from network: ', error);
+          return new Response('Resource tidak tersedia', { status: 404 });
+        });
       })
   );
 });
