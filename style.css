@@ -135,7 +135,7 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
     background-color: var(--bg-color);
 }
 
@@ -143,7 +143,7 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
     background-color: var(--bg-color);
 }
 
@@ -160,10 +160,10 @@ section {
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    margin-top: 3rem;
+    margin-top: 1rem;
 }
 .home-content h3{
-    font-size: 3rem;
+    font-size: 1rem;
     font-weight: 700;
 }
 span{
