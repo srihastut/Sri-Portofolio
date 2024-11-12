@@ -177,7 +177,7 @@ span{
     font-size: 2rem;
 }
 .home-conntent h1{
-    font-size: 8rem;
+    font-size: 2rem;
     font-weight: 700;
     line-height: 1;
 }
@@ -192,7 +192,7 @@ home-img img{
     cursor: pointer;
 }
 .home-content p{
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 500;
     width: 1000px;
 }
