@@ -249,6 +249,29 @@ span {
     }
 }
 
+/* Responsif untuk Mobile */
+@media (max-width: 768px) {
+    .home-content h1,
+    .home-content h3:nth-of-type(2),
+    .home-content p,
+    .btn,
+    .text-animation {
+        font-size: 1rem; /* Mengurangi ukuran font untuk mobile */
+    }
+
+    .home-content p {
+        max-width: 90%; /* Menyesuaikan lebar maksimal agar muat di layar kecil */
+    }
+
+    .btn {
+        padding: 0.8rem 1.8rem; /* Mengurangi padding untuk mobile */
+    }
+
+    .home-img img {
+        width: 50vw; /* Menyesuaikan ukuran gambar di mobile */
+    }
+}
+
 /* Gaya untuk bagian About Me agar mirip dengan kotak */
 .about .about-content {
     display: flex;
